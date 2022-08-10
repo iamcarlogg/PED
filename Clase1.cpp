@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//variables globales 
+//Variables globales
  int numero3 = 14;
  int numero4 = 5; 
 
@@ -17,24 +17,26 @@ int main(){
 
     int suma1 = numero1 + numero2;
     cout<<suma1;
-    //Ejercicio no evaluado
-    //imprimir resultado de funcion sumar y restar 
-    //solicitar al usuario los valores de la entrada de sumar y restar.
+    /* Ejercicio no evaluado
+    Imprimir resultado de funcion sumar y restar 
+    Solicitar al usuario los valores de la entrada de sumar y restar. */
 
-    //Falta llamar a la función
+    //Llamado a las funciones
+
     return 0;
 }
 
 //Definición de las funciones 
-//funciones sin parametros 
+
+//Funciones sin parámetros 
 int sumar(){
     //variable local
    int suma2 = numero3 + numero4;
    return suma2;
 }
-//funciones sin parametros 
+//funciones sin parámetros 
 int restar(){
-    //variable local
+    //variable local 
     int resta = numero3 - numero4;
     return resta;
 }
