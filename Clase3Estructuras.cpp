@@ -1,5 +1,13 @@
 #include <iostream>
 
+
+/*ACTIVIDAD NO EVALUADA
+
+Agregar el metodo sizeof() en la condición del ciclo for 
+Hacer uso del método getline para los valores string o char
+
+*/
+
 using namespace std;
 //Declaración de estructura
 struct Alumno
@@ -29,7 +37,7 @@ int main()
 }; */
 
 
-//SOLICITAR LA INFORMACION 
+//SOLICITAR LA INFORMACION
 
 for (int i = 0; i < 5; i++)
 {
