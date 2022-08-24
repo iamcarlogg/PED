@@ -1,65 +1,114 @@
 #include <iostream>
 
-
 /*ACTIVIDAD NO EVALUADA
-
-Agregar el metodo sizeof() en la condiciÃ³n del ciclo for 
-Hacer uso del mÃ©todo getline para los valores string o char
-
+Hacer funcional el codigo  haciendo uso da la función imprimirDatos
+Opcional crear un función para la captura de Datos 
 */
 
 using namespace std;
-//DeclaraciÃ³n de estructura
+
+// Variable global
+int numRegistro = 0;
+
+// Declaración de la función
+
+
+
+// Declaración de estructura
+struct Direccion
+{
+    // char municipio[50];
+    string municipio;
+};
+
 struct Alumno
 {
     string nombre;
     string codigo;
     int anioNac;
+    int edad;
+    struct Direccion dir;
 
-} alumno1[5];  //VARIABLES TIPO STRUCT
+} alumno[10]; // Arreglo TIPO STRUCT
 
 int main()
 {
-//otra forma de declarar variables tipo struct
-//Alumno alumno2;
 
-//Acceder un miembro de la estructura 
-//alumno1.codigo = "UCA4578";
+    // Crear un variable auxiliar
+    string aux;
+    // otra forma de declarar variables tipo struct
+    /*  struct Alumno alumno3;
+     Alumno alumno4;
+     //Otra forma de declaración de un arreglo tipo struct
+     Alumno alumnos[5]; */
 
-//Imprimiendo informacion del miembro 
-//cout<<alumno1[].codigo;
+    // Declaracion e inicializacion del arreglo
+    int lista[] = {1, 2, 3, 4, 5};
 
-//Asignar valores a todos los miembros 
-/* alumno1 = {
-    "Rodolfo",
-    "UCA78944",
-    1995
-}; */
+    // Tamaño del arreglo
+    int tamanoArreglo = sizeof(lista) / sizeof(int);
+    cout << "Tamaño del arreglo lista: " << tamanoArreglo;
 
+    // Tamaño en bytes
+    cout << "Tamaño en bytes " << sizeof(Alumno);
+    cout << "Numero de elemento del arreglo tipo struct " << sizeof(alumno) / sizeof(alumno[0]);
 
-//SOLICITAR LA INFORMACION
+    // Acceder un miembro de la estructura
+    alumno[1].codigo = "UCA4578";
 
-for (int i = 0; i < 5; i++)
-{
-    cout<<"Ingresa tu nombre";
-    //cin>>alumno1[i].nombre;
-    getline(cin,alumno1[i].nombre);
-    cout<<"Ingresa tu codigo";
-    cin>>alumno1[i].codigo;
-    getline(cin,alumno1[i].codigo);
-    cout<<"Ingresa tu aÃ±o de nacimiento";
-    cin>>alumno1[i].anioNac;
-}
+    // Imprimiendo informacion del miembro
+    // cout<<alumno[1].codigo<<endl;
 
-//IMPRIMIR LA INFORMACION 
+    // Acceder a un miembro de una estructura anidada
+    alumno[1].dir.municipio = "Antiguo Cuscatlan";
+    cout << alumno[1].dir.municipio << endl;
 
-  for (int i = 0; i < 5; i++)
-  {
-    cout<<alumno1[i].nombre;
-    cout<<alumno1[i].codigo;
-    cout<<alumno1[i].anioNac;
-  }
-  
+    // Acceder a todos los miembros y asignarles el valor
+    // alumno[5] = {{"Marlen", "92828", 1997},{},{},{},{}}
+
+    cout << "Ingrese el numero de alumnos a registrar ";
+    cin >> numRegistro;
+    // Limpiando el bufer del teclado
+    getline(cin, aux);
+    // SOLICITAR LA INFORMACION
+    for (int i = 0; i < numRegistro; i++)
+    {
+        cout << "Ingresa tu nombre ";
+        // cin>>alumno1[i].nombre;
+        getline(cin, alumno[i].nombre);
+        cout << "Ingresa tu codigo ";
+        // cin >> alumno[i].codigo;
+        getline(cin, alumno[i].codigo);
+        cout << "Ingresa tu año de nacimiento ";
+        cin >> alumno[i].anioNac;
+        alumno[i].edad = 2022 - alumno[i].anioNac;
+        // Limpiando el bufer del teclado
+        getline(cin, aux);
+        cout << "Ingrese el nombre del municipio donde reside ";
+        getline(cin, alumno[i].dir.municipio);
+    }
+
+        // IMPRIMIR LA INFORMACION
+    cout << "Información ingresada" << endl;
+
+    for (int i = 0; i < numRegistro; i++)
+    {
+        cout << alumno[i].nombre << endl;
+        cout << alumno[i].codigo << endl;
+        cout << alumno[i].anioNac << endl;
+        cout << alumno[i].edad << endl;
+        cout << alumno[i].dir.municipio << endl
+             << endl;
+    }
+
+    // Llamando a la función
+    
 
     return 0;
+}
+
+// Definir función sin parámetros
+void imprimirDatos()
+{
+
 }
