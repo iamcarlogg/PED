@@ -3,7 +3,7 @@
 
 /*ACTIVIDAD NO EVALUADA
 
-Agregar el metodo sizeof() en la condición del ciclo for 
+Determinar el tamaño de la estructura
 Hacer uso del método getline para los valores string o char
 
 */
