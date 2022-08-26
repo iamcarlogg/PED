@@ -2,6 +2,10 @@
 
 using namespace std;
 
+/*ACTIVIDAD NO EVALUADA
+Crear la función para la captura de datos
+*/
+
 // variable global
 int numRegistro;
 
